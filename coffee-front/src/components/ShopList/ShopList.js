@@ -4,7 +4,7 @@ import axios from 'axios'
 class ShopList extends Component {
     state = {
         shops: [],
-        visible: 3,
+   
     }
     componentDidMount() {
         this.getShops()
@@ -25,7 +25,7 @@ class ShopList extends Component {
    }
   
     render() { 
-        const shops = this.state.shops.slice(0, this.state.visible).map(shop=>{
+        const shops = this.state.shops.slice(0, this.state.shops.length).map(shop=>{
             return <p> {shop.id} {shop.name} {shop.description} </p>
         })
         return <div>{shops}</div>
