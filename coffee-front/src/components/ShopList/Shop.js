@@ -1,10 +1,13 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+
+import './Shop.css';
 const Shop = (props) => {
     return ( 
-        <Card style={{ width: '40rem' }} className="mx-auto mb-2">
+        <Card>
         <Card.Body>
             <Card.Title>{props.name}</Card.Title>
+            <Card.Subtitle>{props.description}</Card.Subtitle>
         </Card.Body>
         </Card>
      );

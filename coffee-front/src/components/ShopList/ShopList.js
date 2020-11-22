@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Shop from './Shop';
 
 class ShopList extends Component {
     state = {
@@ -26,7 +27,7 @@ class ShopList extends Component {
   
     render() { 
         const shops = this.state.shops.slice(0, this.state.shops.length).map(shop=>{
-            return <p> {shop.id} {shop.name} {shop.description} </p>
+            return <Shop name={shop.name} description={shop.description}/>
         })
         return <div>{shops}</div>
     }
