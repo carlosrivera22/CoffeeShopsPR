@@ -6,3 +6,4 @@ class CoffeeShopSerializer(serializers.ModelSerializer):
         model = CoffeeShop
         fields = '__all__'
 
+
