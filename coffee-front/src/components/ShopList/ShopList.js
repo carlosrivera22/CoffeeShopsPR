@@ -27,7 +27,7 @@ class ShopList extends Component {
   
     render() { 
         const shops = this.state.shops.slice(0, this.state.shops.length).map(shop=>{
-            return <Col sm={4}><Shop image={shop.image}  name={shop.name} description={shop.description} /></Col>
+            return <Col sm={4}><Shop image={shop.image}  name={shop.name} description={shop.description} website={shop.website} /></Col>
         })
         return <Container fluid="md">
                 <Row>{shops}</Row>
