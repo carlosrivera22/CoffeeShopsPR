@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-
+import Shop from './Shop'
+import { Row,Col,Container } from 'react-bootstrap';
 class ShopList extends Component {
     state = {
         shops: [],
@@ -26,9 +27,11 @@ class ShopList extends Component {
   
     render() { 
         const shops = this.state.shops.slice(0, this.state.shops.length).map(shop=>{
-            return <p> {shop.id} {shop.name} {shop.description} </p>
+            return <Col sm={4}><Shop image={shop.image}  name={shop.name} description={shop.description} /></Col>
         })
-        return <div>{shops}</div>
+        return <Container fluid="md">
+                <Row>{shops}</Row>
+               </Container>
     }
 }
  
