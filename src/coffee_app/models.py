@@ -4,4 +4,4 @@ from django.db import models
 class CoffeeShop(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=360)
-    
+    image = models.ImageField(null=True)
