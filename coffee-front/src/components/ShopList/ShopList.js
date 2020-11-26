@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Shop from './Shop'
 import { Row,Col,Container } from 'react-bootstrap';
-import ReactCardFlip from 'react-card-flip';
+
 class ShopList extends Component {
     state = {
         shops: [],
@@ -21,7 +21,7 @@ class ShopList extends Component {
             this.setState({
                 shops: resp.data,
                })
-            console.log(resp.data)
+            
         })
         
    }
