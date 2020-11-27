@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Map from './Map'
+import MetroMap from './MetroMap'
 import { Container } from 'react-bootstrap';
 
 class MapPointers extends Component {
@@ -46,7 +46,7 @@ class MapPointers extends Component {
     };
     
     return <Container fluid="md">
-            <Map markers={markers}/>
+            <MetroMap markers={markers}/>
            </Container>
    }
 }
