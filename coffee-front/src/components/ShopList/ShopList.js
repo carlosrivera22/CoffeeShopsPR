@@ -1,46 +1,60 @@
-import React, { Component } from 'react';
-import axios from 'axios'
 import Shop from './Shop'
 import { Row,Col,Container } from 'react-bootstrap';
 import MapPointers from '../Map/MapPointers';
-class ShopList extends Component {
-    state = {
-        shops: [],
-   
-    }
-    componentDidMount() {
-        this.getShops()
-    }
-    getShops = () =>{
-        axios.get('http://127.0.0.1:8000/api/coffee_shops/',{
-            headers: {
-                'accept': 'application/json'
-            }
-        }
-        ).then(resp=>{
-            this.setState({
-                shops: resp.data,
-               })
-            
-        })
-        
-   }
-  
-    render() { 
-        const shops = this.state.shops.slice(0, this.state.shops.length).map(shop=>{
-            return <Shop image={shop.image}  name={shop.name} description={shop.description} facebook={shop.facebook} address={shop.address} />
-                   
-        })
+import React, { useState, useEffect, useRef } from 'react';
+import { connect } from 'react-redux';
+import { loadShops } from '../../actions/shops';
+import SearchInput from '../SearchInput';
 
-        return  <Container style={{zIndex: 1}}>
-                    <div style={{width: '25%', float:'left'}}>
-                        {shops}
-                    </div>
-                    <div style={{width: '100%', float:'right', position:'fixed'}}>
-                            <MapPointers/>
-                    </div>
-                </Container>
+const ShopList = (props) => {
+  const [shops, setShops] = useState(props.shops);
+  const inputRef = useRef();
+
+  // call api to get list of shops
+  useEffect(() => {
+    props.dispatch(loadShops());
+    inputRef.current = onSearchText;
+  }, []);
+  useEffect(() => {
+    if (props.shops.length > 0) {
+        setShops(props.shops);
     }
-}
- 
-export default ShopList;
+  }, [props.shops]);
+  function onSearchText(text, props) {
+    let filtered;
+    if (text) {
+      filtered = props.shops.filter((shop) =>
+        shop.name.toLowerCase().includes(text.toLowerCase()) 
+        || shop.address.toLowerCase().includes(text.toLowerCase()) 
+      );
+    } else {
+      filtered = props.shops;
+    }
+    setShops(filtered);
+  }
+  function handleSearch(event) {
+    inputRef.current(event.target.value, props);
+  }
+
+  return (
+    <Container style={{zIndex: 1}}>
+        <SearchInput handleSearch={handleSearch} />
+        <Row>
+            <Col>
+                {shops.map((shop, index) => (
+                    <Shop key={index} {...shop} />
+                ))}
+            </Col>
+            <Col>
+                <MapPointers/>
+            </Col>
+        </Row>
+    </Container>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  shops: state.shops
+});
+
+export default connect(mapStateToProps)(ShopList);
