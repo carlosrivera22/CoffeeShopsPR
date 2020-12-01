@@ -32,7 +32,7 @@ class MapPointers extends Component {
     var i;
     var offset;
     for (i=0; i < this.state.shops.length; i++){
-        if (i % 2 ==0){
+        if (i % 2 ===0){
             offset = -2;
         }else{
             offset = 2;
