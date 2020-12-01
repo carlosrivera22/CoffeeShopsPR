@@ -46,7 +46,7 @@ const ShopList = (props) => {
                 ))}
             </Col>
             <Col>
-                <MapPointers/>
+                <MapPointers />
             </Col>
         </Row>
     </Container>
