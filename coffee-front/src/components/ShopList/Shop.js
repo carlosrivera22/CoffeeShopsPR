@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 const Shop = (props) => {
-
     return ( 
         <Card style={{ height: '32rem', width: '20rem' }} className="mx-auto mb-2">
         <Card.Img variant="top" src={props.image} />

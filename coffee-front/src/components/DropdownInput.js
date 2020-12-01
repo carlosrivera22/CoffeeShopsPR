@@ -6,9 +6,7 @@ const DropdownInput = ({ handleDropdown }) => {
 
   return (
     <div>
-    <Row className='px-3'>
-        <h1>REGION METRO</h1>
-    </Row>
+        
     <Row className='px-3'>
     <FormControl
         as="select"
@@ -16,7 +14,6 @@ const DropdownInput = ({ handleDropdown }) => {
         custom
         onClick={handleDropdown}
       >
-        <option value='0'>Escoger Region</option>
         <option value="metro">Metro</option>
         <option value="oeste">Oeste</option>
       </FormControl>

@@ -9,8 +9,9 @@ import DropdownInput from '../DropdownInput'
 
 const ShopList = (props) => {
   const [shops, setShops] = useState(props.shops);
+  const [region, setRegion] = useState('OESTE');
   const inputRef = useRef([]);
-  
+
 
   // call api to get list of shops
   useEffect(() => {
@@ -40,13 +41,14 @@ const ShopList = (props) => {
   }
 
   function onDropdownSelect(text,props){
-    console.log(text)
     let selection;
-    if(text !== '0'){
+    if(text != '0'){
+      setRegion(text.toUpperCase())
       selection = props.shops.filter((shop) =>
       shop.region.toLowerCase().includes(text.toLowerCase()));
     } else {
       selection = props.shops
+      setRegion("METRO")
     }
     setShops(selection)
   }
@@ -54,9 +56,12 @@ const ShopList = (props) => {
   function handleDropdown(event){
     inputRef.current[1](event.target.value,props)
   }
-
+  
   return (
     <Container style={{zIndex: 1}}>
+      <Row className='px-3'>
+  <h1>REGION {region}</h1>
+      </Row>
       <DropdownInput handleDropdown={handleDropdown}/>
         <SearchInput handleSearch={handleSearch} />
         <br/>
