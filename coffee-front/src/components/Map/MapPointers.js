@@ -45,7 +45,7 @@ class MapPointers extends Component {
         console.log(markers)
     };
     
-    return <Container fluid="md">
+    return <Container fluid="md" style={{position:'fixed'}}>
             <MetroMap markers={markers}/>
            </Container>
    }

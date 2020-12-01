@@ -40,13 +40,13 @@ const ShopList = (props) => {
     <Container style={{zIndex: 1}}>
         <SearchInput handleSearch={handleSearch} />
         <Row>
-            <Col>
+            <Col md={6}>
                 {shops.map((shop, index) => (
                     <Shop key={index} {...shop} />
                 ))}
             </Col>
-            <Col>
-                <MapPointers />
+            <Col md={6} className="d-none d-lg-block">
+                <MapPointers/>
             </Col>
         </Row>
     </Container>
