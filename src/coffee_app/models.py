@@ -9,6 +9,7 @@ class CoffeeShop(models.Model):
     address = models.CharField(max_length=200,null=True)
     latitude = models.FloatField(null=True,blank=True)
     longitude = models.FloatField(null=True,blank=True)
+    region = models.CharField(max_length=200, null=True)
 
 
 

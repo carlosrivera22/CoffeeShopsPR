@@ -5,15 +5,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { loadShops } from '../../actions/shops';
 import SearchInput from '../SearchInput';
+import DropdownInput from '../DropdownInput'
 
 const ShopList = (props) => {
   const [shops, setShops] = useState(props.shops);
-  const inputRef = useRef();
+  const inputRef = useRef([]);
+  
 
   // call api to get list of shops
   useEffect(() => {
     props.dispatch(loadShops());
-    inputRef.current = onSearchText;
+    inputRef.current[0] = onSearchText;
+    inputRef.current[1] = onDropdownSelect;
   }, []);
   useEffect(() => {
     if (props.shops.length > 0) {
@@ -33,12 +36,30 @@ const ShopList = (props) => {
     setShops(filtered);
   }
   function handleSearch(event) {
-    inputRef.current(event.target.value, props);
+    inputRef.current[0](event.target.value, props);
+  }
+
+  function onDropdownSelect(text,props){
+    console.log(text)
+    let selection;
+    if(text !== '0'){
+      selection = props.shops.filter((shop) =>
+      shop.region.toLowerCase().includes(text.toLowerCase()));
+    } else {
+      selection = props.shops
+    }
+    setShops(selection)
+  }
+
+  function handleDropdown(event){
+    inputRef.current[1](event.target.value,props)
   }
 
   return (
     <Container style={{zIndex: 1}}>
+      <DropdownInput handleDropdown={handleDropdown}/>
         <SearchInput handleSearch={handleSearch} />
+        <br/>
         <Row>
             <Col md={6}>
                 {shops.map((shop, index) => (
