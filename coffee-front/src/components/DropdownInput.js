@@ -14,6 +14,7 @@ const DropdownInput = ({ handleDropdown }) => {
         custom
         onClick={handleDropdown}
       >
+        <option value="isla">Isla</option>
         <option value="metro">Metro</option>
         <option value="oeste">Oeste</option>
       </FormControl>

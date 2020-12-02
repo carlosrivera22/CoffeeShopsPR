@@ -12,11 +12,11 @@ const geoUrl =
 const MetroMap = (props) => {
   return (
     <ComposableMap 
-    style={{ height: '25rem', width: '100%'}}
+    style={{ height: '25rem', width: '85%'}}
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [66.05, -18.35, 0],
-        scale: 129500
+        rotate: [66.05, -18.38, 0],
+        scale: 159500
       }}
     >
       <Geographies geography={geoUrl}>

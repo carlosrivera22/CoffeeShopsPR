@@ -12,10 +12,11 @@ const geoUrl =
 const Map = (props) => {
   return (
     <ComposableMap
+    style={{ height: '50rem', width: '90%'}}
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [66.25, -17.9, 0],
-        scale: 21900
+        rotate: [66.32, -17.95, 0],
+        scale: 25000
       }}
     >
       <Geographies geography={geoUrl}>
@@ -34,12 +35,12 @@ const Map = (props) => {
       {props.markers.map(({ name, coordinates, markerOffset }) => (
         <Marker key={name} coordinates={coordinates}>
           
-            <circle r={2} fill="#F00" stroke="#fff" strokeWidth={1} />
+          <circle r={2} fill="black" stroke="#fff" strokeWidth={1} />
             <text
             textAnchor="right"
-            y={markerOffset}
-            x={2}
-            style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "5px" }}
+            y={markerOffset-2}
+            x={6}
+            style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "6px" }}
             >
             {name}
             </text>

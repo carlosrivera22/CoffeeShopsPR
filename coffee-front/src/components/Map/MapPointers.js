@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import MetroMap from './MetroMap'
+import Map from './Map'
 import { Container } from 'react-bootstrap';
 
 class MapPointers extends Component {
@@ -15,7 +16,7 @@ class MapPointers extends Component {
         axios.get('http://127.0.0.1:8000/api/coffee_shops/',{
             headers: {
                 'accept': 'application/json'
-            }
+            },
         }
         ).then(resp=>{
             this.setState({
@@ -27,12 +28,12 @@ class MapPointers extends Component {
    }
    
    render() {
-
+    
     const markers = [];
     var i;
     var offset;
     for (i=0; i < this.state.shops.length; i++){
-        if (i % 2 ===0){
+        if (i % 2 === 0){
             offset = -2;
         }else{
             offset = 2;
@@ -42,12 +43,17 @@ class MapPointers extends Component {
             name: this.state.shops[i].name,
             coordinates: [this.state.shops[i].longitude, this.state.shops[i].latitude]
         });
-        console.log(markers)
     };
-    
-    return <Container fluid="md" style={{position:'fixed'}}>
+    if (this.props.region == "METRO"){
+    return <Container  style={{position:'fixed'}}>
             <MetroMap markers={markers}/>
            </Container>
+    }
+    else if (this.props.region == "ISLA"){
+        return <Container style={{position:'fixed'}}>
+            <Map markers={markers}/>
+           </Container>
+    }
    }
 }
 export default MapPointers
