@@ -68,8 +68,10 @@ const ShopList = (props) => {
       <Row className='px-3'>
         <h1>{region}</h1>
       </Row>
-      <DropdownInput handleDropdown={handleDropdown}/>
+      <Row className='px-3'>
+        <DropdownInput handleDropdown={handleDropdown}/>
         <SearchInput handleSearch={handleSearch} />
+      </Row>
         <br/>
         <Row>
             <Col md={card_column}>

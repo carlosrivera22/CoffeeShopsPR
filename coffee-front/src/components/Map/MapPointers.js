@@ -44,12 +44,12 @@ class MapPointers extends Component {
             coordinates: [this.state.shops[i].longitude, this.state.shops[i].latitude]
         });
     };
-    if (this.props.region == "METRO"){
+    if (this.props.region === "METRO"){
     return <Container  style={{position:'fixed'}}>
             <MetroMap markers={markers}/>
            </Container>
     }
-    else if (this.props.region == "ISLA"){
+    else if (this.props.region === "ISLA"){
         return <Container style={{position:'fixed'}}>
             <Map markers={markers}/>
            </Container>

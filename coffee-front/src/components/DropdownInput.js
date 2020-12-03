@@ -5,10 +5,11 @@ import { Row,FormControl} from 'react-bootstrap';
 const DropdownInput = ({ handleDropdown }) => {
 
   return (
-    <div>
+  
         
-    <Row className='px-3'>
+    <div style={{width:"10%"}}>
     <FormControl
+        style={{borderRadius:"0px", outline:"none" ,outlineOffset: "none"}}
         as="select"
         id="inlineFormCustomSelect"
         custom
@@ -18,7 +19,7 @@ const DropdownInput = ({ handleDropdown }) => {
         <option value="metro">Metro</option>
         <option value="oeste">Oeste</option>
       </FormControl>
-    </Row>
+
     </div>
     
   );
