@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, FormControl } from 'react-bootstrap';
 const SearchInput = ({ handleSearch }) => {
   return (
-    <div style={{width:"30%"}}>
+    <div style={{width:"75%"}}>
         <FormControl style={{borderRadius:"0px",'no-outline-on-focus':'true'}} onChange={handleSearch} type="text" placeholder="Search" />
     </div>
   );

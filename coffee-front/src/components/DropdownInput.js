@@ -7,9 +7,9 @@ const DropdownInput = ({ handleDropdown }) => {
   return (
   
         
-    <div style={{width:"10%"}}>
+    <div style={{width:"25%"}}>
     <FormControl
-        style={{borderRadius:"0px", outline:"none" ,outlineOffset: "none"}}
+        style={{borderRadius:"0px"}}
         as="select"
         id="inlineFormCustomSelect"
         custom

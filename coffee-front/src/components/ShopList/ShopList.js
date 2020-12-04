@@ -22,24 +22,34 @@ const ShopList = (props) => {
     inputRef.current[1] = onDropdownSelect;
   }, []);
   useEffect(() => {
+
     if (props.shops.length > 0) {
+        console.log(region)
         setShops(props.shops);
     }
   }, [props.shops]);
-  function onSearchText(text, props) {
+  function onSearchText(text, props, region) {
     let filtered;
-    if (text) {
+    if (text && region === 'ISLA') {
       filtered = props.shops.filter((shop) =>
         shop.name.toLowerCase().includes(text.toLowerCase()) 
         || shop.address.toLowerCase().includes(text.toLowerCase()) 
       );
-    } else {
+    } 
+    else if(text){
+      filtered = props.shops.filter((shop) =>
+        (shop.name.toLowerCase().includes(text.toLowerCase()) 
+        || shop.address.toLowerCase().includes(text.toLowerCase()))
+        && shop.region.toUpperCase() === region
+      );
+    }
+    else {
       filtered = props.shops;
     }
     setShops(filtered);
   }
   function handleSearch(event) {
-    inputRef.current[0](event.target.value, props);
+    inputRef.current[0](event.target.value, props, region);
   }
 
   function onDropdownSelect(text,props){
@@ -68,7 +78,7 @@ const ShopList = (props) => {
       <Row className='px-3'>
         <h1>{region}</h1>
       </Row>
-      <Row className='px-3'>
+      <Row className="px-3">
         <DropdownInput handleDropdown={handleDropdown}/>
         <SearchInput handleSearch={handleSearch} />
       </Row>
