@@ -12,7 +12,7 @@ const geoUrl =
 const WestMap = (props) => {
   return (
     <ComposableMap 
-    style={{ height: '30rem', width: '60%'}}
+    style={{ height: '100%', width: '60%'}}
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
         rotate: [67.05, -18.2013, 0],

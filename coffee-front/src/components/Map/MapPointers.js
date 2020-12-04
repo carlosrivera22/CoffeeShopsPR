@@ -46,17 +46,17 @@ class MapPointers extends Component {
         });
     };
     if (this.props.region === "METRO"){
-    return <Container  style={{position:'fixed'}}>
+    return <Container style={{position:'fixed', zIndex:"-10"}}>
             <MetroMap markers={markers}/>
            </Container>
     }
     else if (this.props.region === "ISLA"){
-        return <Container style={{position:'fixed'}}>
+        return <Container style={{position:'fixed',zIndex:"-10"}}>
             <Map markers={markers}/>
            </Container>
     }
     else if (this.props.region === "OESTE"){
-        return <Container style={{position:'fixed'}}>
+        return <Container style={{position:'fixed',zIndex:"-10"}}>
             <WestMap markers={markers}/>
            </Container>
     }

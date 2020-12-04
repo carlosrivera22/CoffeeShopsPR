@@ -15,7 +15,9 @@ function App() {
           <Route exact path='/list' component={ShopList} />
         </Switch>
       </div>
+      <div>
       <Footer/>
+      </div>
     </BrowserRouter>
   );
 }
