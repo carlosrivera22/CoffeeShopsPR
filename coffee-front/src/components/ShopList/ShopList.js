@@ -44,7 +44,14 @@ const ShopList = (props) => {
       );
     }
     else {
-      filtered = props.shops;
+      if(region === 'ISLA'){
+        filtered = props.shops;
+      }else{
+        filtered = props.shops.filter((shop) => 
+          shop.region.toUpperCase() === region
+        );
+      }
+
     }
     setShops(filtered);
   }

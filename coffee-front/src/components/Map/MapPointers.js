@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import MetroMap from './MetroMap'
+import WestMap from './WestMap'
 import Map from './Map'
 import { Container } from 'react-bootstrap';
 
@@ -52,6 +53,11 @@ class MapPointers extends Component {
     else if (this.props.region === "ISLA"){
         return <Container style={{position:'fixed'}}>
             <Map markers={markers}/>
+           </Container>
+    }
+    else if (this.props.region === "OESTE"){
+        return <Container style={{position:'fixed'}}>
+            <WestMap markers={markers}/>
            </Container>
     }
    }
