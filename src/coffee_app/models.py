@@ -18,5 +18,5 @@ class Book(models.Model):
     description = models.TextField(max_length=360)
     image = models.ImageField()
     author = models.CharField(max_length=200)
-    subject = models.CharField(max_length=200)
     genre = models.CharField(max_length=200)
+    shop = models.ForeignKey(CoffeeShop, on_delete=models.CASCADE)
