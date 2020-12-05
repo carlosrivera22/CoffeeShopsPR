@@ -10,8 +10,7 @@ import DropdownInput from '../DropdownInput'
 const ShopList = (props) => {
   const [shops, setShops] = useState(props.shops);
   const [region, setRegion] = useState('ISLA');
-  const [card_column,setCardColumn] = useState(3)
-  const [map_column,setMapColumn] = useState(9)
+  const [no_results_text, setNoResultsText] = useState("")
   const inputRef = useRef([]);
 
 
@@ -42,6 +41,9 @@ const ShopList = (props) => {
         || shop.address.toLowerCase().includes(text.toLowerCase()))
         && shop.region.toUpperCase() === region
       );
+      if (filtered.length === 0){
+        setNoResultsText("No hay Resultados")
+      }
     }
     else {
       if(region === 'ISLA'){
@@ -63,14 +65,12 @@ const ShopList = (props) => {
     let selection;
     if(text !== 'isla'){
       setRegion(text.toUpperCase())
-      setCardColumn(2)
-      setMapColumn(10)
+ 
       selection = props.shops.filter((shop) =>
       shop.region.toLowerCase().includes(text.toLowerCase()));
     } else {
       setRegion(text.toUpperCase())
-      setCardColumn(2)
-      setMapColumn(10)
+
       selection = props.shops
     }
     setShops(selection)
@@ -91,12 +91,13 @@ const ShopList = (props) => {
       </Row>
         <br/>
         <Row>
-            <Col md={card_column}>
+            <Col md={2}>
                 {shops.map((shop, index) => (
                     <Shop key={index} {...shop} />
                 ))}
+                <h1>{no_results_text}</h1>
             </Col>
-            <Col md={map_column} className="d-none d-lg-block">
+            <Col md={10} className="d-none d-lg-block">
                 <MapPointers region={region}/>
             </Col>
         </Row>
