@@ -7,7 +7,7 @@ const HomePage = () => {
         <Container>
             <Row className="py-3">
             <Col>
-            <Image style={{width:"250px"}} src="../temp_logo2.jpg" rounded />
+            <Image style={{width:"250px"}} src="../potential_logo2.gif" rounded />
             </Col>
         </Row>
         <Row className="py-3">
