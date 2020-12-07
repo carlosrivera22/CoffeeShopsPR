@@ -36,6 +36,20 @@ const HomePage = () => {
         <hr></hr>
         <Row className="py-5">
             <Col>
+                <h1>¿Como funciona?</h1>
+                <Row className="py-3">
+                    <Col lg={6}>
+                    <Image style={{width:"400px"}} src="../brainwriting.png" rounded />
+                    </Col>
+                    <Col lg={6}>
+                    <Image style={{width:"400px"}} src="../brainwriting2.png" rounded />
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
+        <hr></hr>
+        <Row className="py-5">
+            <Col>
                 <h1>Libros Recientes</h1>
                 <center>
                 <Row className="py-3">
