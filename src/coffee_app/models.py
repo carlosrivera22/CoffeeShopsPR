@@ -20,3 +20,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200)
     genre = models.CharField(max_length=200)
     shop = models.ForeignKey(CoffeeShop, on_delete=models.CASCADE)
+
+class Newsletter(models.Model):
+    email = models.EmailField(max_length=254)
+    

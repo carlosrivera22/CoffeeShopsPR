@@ -1,8 +1,49 @@
-import React from 'react';
-import { Row,Col,Container,Image,Button,InputGroup,FormControl,Card } from 'react-bootstrap';
-
+import React, { useState, useRef,useEffect} from 'react';
+import { Row,Col,Container,Image,Button,InputGroup,FormControl,Card,Alert } from 'react-bootstrap';
+import axios from 'axios'
 
 const HomePage = () => {
+    const [newsletter, setNewsletter] = useState("");
+    const [success,setSuccess] = useState(false)
+    const inputRef = useRef([]);
+
+
+    useEffect(() => {
+        inputRef.current[0] = onSubscribe;
+
+      }, []);
+      
+    function onSubscribe(text){
+        setNewsletter(text)
+    }
+
+    function handleSubscribe(event){
+        inputRef.current[0](event.target.value);
+    }
+
+    function storeEmail(text){
+        let formData = new FormData()
+        formData.append('email',text)
+        axios.post("http://127.0.0.1:8000/api/newsletter/", formData,{
+            headers: {
+                'accept': 'application/json',
+                'content-type': 'multipart/form-data'
+             }
+        })
+        .then(resp=>{
+            console.log(resp.data)
+            setSuccess(true)
+        
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+    function handleStoring(){
+        storeEmail(newsletter)
+        setNewsletter("")
+        
+    }
     return(
         <Container>
         <Row className="py-3">
@@ -29,7 +70,7 @@ const HomePage = () => {
                 <center><p style={{width:"90%"}}className="py-3">
                     Brindamos informacion sobre los mejores Coffee Shops de Puerto Rico. 
                     Hemos colaborado con algunos Coffee Shops para proveerle a nuestros 
-                    clientes libros de manera gratuita siguiendo la dinamica "Deja uno, llevate uno!". 
+                    clientes libros de manera gratuita siguiendo la dinamica <b>"Deja uno, llevate uno!"</b>. 
                 </p></center>
             </Col>
         </Row>
@@ -89,17 +130,26 @@ const HomePage = () => {
         <Row className="py-5">
             <Col md={{ span: 6, offset: 3 }}>
             <h1>Newsletter</h1>
+            {success &&
+                <React.Fragment>
+                    <Alert variant='dark' onClose={() => setSuccess(false)} dismissible>
+                        Gracias por subscribirte a nuestro newsletter!
+                    </Alert>
+                </React.Fragment>
+            }
             <Image style={{width:"50px"}} src="../newsletter_animation.gif" rounded />
+          
                 <InputGroup className="mb-3 py-3">
                     <FormControl
+                    onChange={handleSubscribe}
+                    value={newsletter}
                     placeholder="Email"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
                     />
                     <InputGroup.Append>
-                    <Button variant="outline-dark">Subscribete</Button>
+                    <Button onClick={handleStoring} variant="outline-dark">Subscribete</Button>
                     </InputGroup.Append>
                 </InputGroup>
+         
             </Col>
         </Row>
         </Container>
