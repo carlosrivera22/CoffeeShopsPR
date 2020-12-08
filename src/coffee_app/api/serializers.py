@@ -1,4 +1,4 @@
-from ..models import CoffeeShop, Newsletter
+from ..models import CoffeeShop, Newsletter,Book
 from rest_framework import serializers
 
 class CoffeeShopSerializer(serializers.ModelSerializer):
@@ -12,4 +12,8 @@ class NewsletterSerializer(serializers.ModelSerializer):
         model = Newsletter
         fields = '__all__'
 
+class BookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = '__all__'
     

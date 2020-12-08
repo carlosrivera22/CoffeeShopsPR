@@ -1,12 +1,11 @@
 import React, { useState, useRef,useEffect} from 'react';
 import { Row,Col,Container,Image,Button,InputGroup,FormControl,Card,Alert } from 'react-bootstrap';
 import axios from 'axios'
-
+import RecentBooks from '../Books/RecentBooks';
 const HomePage = () => {
     const [newsletter, setNewsletter] = useState("");
     const [success,setSuccess] = useState(false)
     const inputRef = useRef([]);
-
 
     useEffect(() => {
         inputRef.current[0] = onSubscribe;
@@ -93,7 +92,9 @@ const HomePage = () => {
             <Col>
                 <h1>Libros Recientes</h1>
                 <center>
-                <Row className="py-3">
+                    <br></br><br></br>
+                    <RecentBooks/>
+                {/* <Row className="py-3">
                     <Col lg={4}>
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src="holder.js/100px180" />
@@ -121,7 +122,7 @@ const HomePage = () => {
                         </Card.Body>
                         </Card>
                     </Col>
-                </Row>
+                </Row> */}
                 </center>
             </Col>
             

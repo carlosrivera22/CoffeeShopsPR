@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import CoffeeShopSerializer, NewsletterSerializer
-from ..models import CoffeeShop, Newsletter
+from .serializers import CoffeeShopSerializer, NewsletterSerializer, BookSerializer
+from ..models import CoffeeShop, Newsletter,Book
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
     queryset = CoffeeShop.objects.all()
@@ -9,4 +9,9 @@ class CoffeeShopViewSet(viewsets.ModelViewSet):
 class NewsletterViewSet(viewsets.ModelViewSet):
     queryset = Newsletter.objects.all()
     serializer_class = NewsletterSerializer
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    
 
