@@ -1,5 +1,5 @@
 import React, { useState, useRef,useEffect} from 'react';
-import { Row,Col,Container,Image,Button,InputGroup,FormControl,Card,Alert } from 'react-bootstrap';
+import { Row,Col,Container,Image,Button,InputGroup,FormControl,Alert } from 'react-bootstrap';
 import axios from 'axios'
 import RecentBooks from '../Books/RecentBooks';
 const HomePage = () => {
