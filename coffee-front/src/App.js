@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <div className='App'>
+      <div className='App' id='main'>
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/list' component={ShopList} />

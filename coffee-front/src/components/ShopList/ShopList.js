@@ -27,6 +27,7 @@ const ShopList = (props) => {
         setShops(props.shops);
     }
   }, [props.shops]);
+  
   function onSearchText(text, props, region) {
     let filtered;
     if (text && region === 'ISLA') {
