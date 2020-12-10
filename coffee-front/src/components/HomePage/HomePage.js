@@ -94,35 +94,6 @@ const HomePage = () => {
                 <center>
                     <br></br><br></br>
                     <RecentBooks/>
-                {/* <Row className="py-3">
-                    <Col lg={4}>
-                        <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Button variant="outline-dark">See Book Details</Button>
-                        </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col lg={4}>
-                        <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Button variant="outline-dark">See Book Details</Button>
-                        </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col lg={4}>
-                        <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Button variant="outline-dark">See Book Details</Button>
-                        </Card.Body>
-                        </Card>
-                    </Col>
-                </Row> */}
                 </center>
             </Col>
             
