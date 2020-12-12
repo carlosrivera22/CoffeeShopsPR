@@ -1,5 +1,5 @@
 import React, { useState, useRef,useEffect} from 'react';
-import { Row,Col,Container,Image,Button,InputGroup,FormControl,Alert } from 'react-bootstrap';
+import { Row,Col,Container,Image,Button,InputGroup,FormControl,Alert,Fade } from 'react-bootstrap';
 import axios from 'axios'
 import RecentBooks from '../Books/RecentBooks';
 const HomePage = () => {
@@ -104,7 +104,8 @@ const HomePage = () => {
             <h1>Newsletter</h1>
             {success &&
                 <React.Fragment>
-                    <Alert variant='dark' onClose={() => setSuccess(false)} dismissible>
+                    
+                    <Alert style={{transition: "width 2s"}} variant='dark' onClose={() => setSuccess(false)} dismissible>
                         Gracias por subscribirte a nuestro newsletter!
                     </Alert>
                 </React.Fragment>

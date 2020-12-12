@@ -92,13 +92,13 @@ const ShopList = (props) => {
       </Row>
         <br/>
         <Row>
-            <Col md={2}>
+            <Col lg={2}>
                 {shops.map((shop, index) => (
                     <Shop key={index} {...shop} />
                 ))}
                 <h1>{no_results_text}</h1>
             </Col>
-            <Col md={10} className="d-none d-lg-block">
+            <Col lg={10} className="d-none d-lg-block">
                 <MapPointers region={region}/>
             </Col>
         </Row>

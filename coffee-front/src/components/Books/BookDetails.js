@@ -25,7 +25,11 @@ const BookDetails = (props) =>{
                         <div>
                             <b>Disponible en:</b>
                             <br></br>
-                            <p>{props.shop}</p>
+                            <p>{props.shop_name}</p>
+                        </div>
+                        <div>
+                            <b>Direccion</b>
+                            <p>{props.shop_address}</p>
                         </div>
                         </Card.Text>
     

@@ -16,7 +16,10 @@ const Book = (props) => {
     }
 
     function onButtonClick(){
-        ReactDOM.render(<BookDetails shop={props.shop} description={props.description} author={props.author} image={props.image} id={props.id} title={props.title}/>, document.getElementById('main'));
+        ReactDOM.render(<BookDetails shop_name={props.shop_name} description={props.description} 
+                                     author={props.author} image={props.image} id={props.id} title={props.title}
+                                     shop_address={props.shop_address}/>, 
+                                     document.getElementById('main'));
     }
     return ( 
         <Card style={{ width: '15rem' }} className="mx-auto mb-2">
