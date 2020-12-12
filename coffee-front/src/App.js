@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage'
 import {Route, BrowserRouter, Switch} from 'react-router-dom'
 import BookDetails from './components/Books/BookDetails';
-
+import ShopBooks from './components/Books/ShopBooks';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +17,7 @@ function App() {
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/list' component={ShopList} />
           <Route exact path='/books/:id' component={BookDetails}/>
+          <Route exact path='/coffee_shop/:id/books' component={ShopBooks}/>
         </Switch>
       </div>
       <Footer/>
