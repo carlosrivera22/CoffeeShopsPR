@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 const Book = (props) => {
     
     const inputRef = useRef([]);
-    const ruta = '/books/'+props.id
+    // const ruta = '/books/'+props.id
     useEffect(() => {
         inputRef.current[0] = onButtonClick;
       }, []);
@@ -16,7 +16,7 @@ const Book = (props) => {
     }
 
     function onButtonClick(){
-        ReactDOM.render(<BookDetails id={props.id}/>, document.getElementById('main'));
+        ReactDOM.render(<BookDetails shop={props.shop} description={props.description} author={props.author} image={props.image} id={props.id} title={props.title}/>, document.getElementById('main'));
     }
     return ( 
         <Card style={{ width: '15rem' }} className="mx-auto mb-2">
