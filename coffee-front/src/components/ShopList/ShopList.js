@@ -35,6 +35,7 @@ const ShopList = (props) => {
         shop.name.toLowerCase().includes(text.toLowerCase()) 
         || shop.address.toLowerCase().includes(text.toLowerCase()) 
       );
+      setNoResultsText("")
     } 
     else if(text){
       filtered = props.shops.filter((shop) =>
@@ -42,9 +43,7 @@ const ShopList = (props) => {
         || shop.address.toLowerCase().includes(text.toLowerCase()))
         && shop.region.toUpperCase() === region
       );
-      if (filtered.length === 0){
-        setNoResultsText("No hay Resultados")
-      }
+      setNoResultsText("")
     }
     else {
       if(region === 'ISLA'){
@@ -54,7 +53,10 @@ const ShopList = (props) => {
           shop.region.toUpperCase() === region
         );
       }
-
+      setNoResultsText("")
+    }
+    if (filtered.length === 0){
+      setNoResultsText("No hay Resultados")
     }
     setShops(filtered);
   }
@@ -83,8 +85,8 @@ const ShopList = (props) => {
   
   return (
     <Container style={{zIndex: 1}}>
-      <Row className='px-3'>
-        <h1>{region}</h1>
+      <Row className='px-3 py-3'>
+        <h1>COFFEE SHOPS: <b>{region}</b></h1>
       </Row>
       <Row className="px-3">
         <DropdownInput handleDropdown={handleDropdown}/>
