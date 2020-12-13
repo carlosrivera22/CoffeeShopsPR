@@ -3,7 +3,8 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Marker
+  Marker,
+  ZoomableGroup
 } from "react-simple-maps";
 const geoUrl =
   "https://raw.githubusercontent.com/commonwealth-of-puerto-rico/crime-spotter/master/public/data/municipalities.geojson";
@@ -12,13 +13,14 @@ const geoUrl =
 const Map = (props) => {
   return (
     <ComposableMap
-    style={{ height:  '100%', width: '90%'}}
+    style={{ height:  '100%', width: '85%'}}
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
         rotate: [66.32, -17.95, 0],
         scale: 25000
       }}
     >
+      <ZoomableGroup zoom={1}>
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
           geographies
@@ -32,21 +34,24 @@ const Map = (props) => {
             ))
         }
       </Geographies>
+      
       {props.markers.map(({ name, coordinates, markerOffset }) => (
         <Marker key={name} coordinates={coordinates}>
           
           <circle r={2} fill="black" stroke="#fff" strokeWidth={1} />
             <text
             textAnchor="right"
-            y={markerOffset-2}
-            x={6}
-            style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "6px" }}
+            y={markerOffset}
+            x={5}
+            style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "10px" }}
             >
             {name}
             </text>
 
         </Marker>
+        
       ))}
+      </ZoomableGroup>
     </ComposableMap>
   );
 };

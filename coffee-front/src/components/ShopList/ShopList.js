@@ -92,7 +92,7 @@ const ShopList = (props) => {
       </Row>
         <br/>
         <Row>
-            <Col lg={2}>
+            <Col className="py-5" lg={2}>
                 {shops.map((shop, index) => (
                     <Shop key={index} {...shop} />
                 ))}
