@@ -8,6 +8,7 @@ import HomePage from './components/HomePage/HomePage'
 import {Route, BrowserRouter, Switch} from 'react-router-dom'
 import BookDetails from './components/Books/BookDetails';
 import ShopBooks from './components/Books/ShopBooks';
+import BookList from './components/Books/BookList';
 function App() {
   return (
     <BrowserRouter>
@@ -16,8 +17,10 @@ function App() {
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/list' component={ShopList} />
+          <Route exact path='/books' component={BookList}/>
           <Route exact path='/books/:id' component={BookDetails}/>
           <Route exact path='/coffee_shop/:id/books' component={ShopBooks}/>
+   
         </Switch>
       </div>
       <Footer/>

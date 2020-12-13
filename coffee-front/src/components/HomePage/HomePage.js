@@ -57,7 +57,7 @@ const HomePage = () => {
             </Button>
         </Col>
         <Col lg={6} sm={6} xs={6}>
-            <Button variant="outline-dark" size="lg" block>
+            <Button href="/books" variant="outline-dark" size="lg" block>
                 Libros
             </Button>
         </Col>

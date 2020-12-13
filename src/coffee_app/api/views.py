@@ -19,17 +19,8 @@ class CoffeeShopBooksViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     def get_queryset(self):
-        
         shop_id = self.request.parser_context["kwargs"]["id"]
-
         shop = CoffeeShop.objects.filter(id=shop_id)
-        # books = []
-        # print(shop_id)
-        # for book in self.queryset:
-        #     print(book.shop.id)
-        #     if int(book.shop.id) == int(shop_id):
-        #         books.append(book)
-        
         books = Book.objects.filter(shop=shop[0])
         return books
                 
