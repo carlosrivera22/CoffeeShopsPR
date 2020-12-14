@@ -67,7 +67,7 @@ const HomePage = () => {
             <Col>
                 <h1>Sobre Nosotros</h1>
                 <center><p style={{width:"90%"}}className="py-3">
-                    Brindamos informacion sobre los mejores Coffee Shops de Puerto Rico. 
+                    Brindamos informaci&oacute;n sobre los mejores Coffee Shops de Puerto Rico. 
                     Hemos colaborado con algunos Coffee Shops para proveerle a nuestros 
                     clientes libros de manera gratuita siguiendo la dinamica <b>"Deja uno, llevate uno!"</b>. 
                 </p></center>
