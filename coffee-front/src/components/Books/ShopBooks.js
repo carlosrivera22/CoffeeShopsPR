@@ -42,7 +42,7 @@ class ShopBooks extends Component {
 
    render(){
     const book_elements = this.state.books.slice(0, this.state.books.length).map(book=>{
-        return <Col key={book.id} sm={4}><Book shop_name={book.shop.name} description={book.description} 
+        return <Col key={book.id} lg={4} md={6} sm={12}><Book shop_name={book.shop.name} description={book.description} 
                                         author={book.author}title={book.title} key={book.id} image={book.image} 
                                         shop_address={book.shop.address} id={book.id}/></Col>
         

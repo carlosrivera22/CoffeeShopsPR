@@ -27,7 +27,7 @@ class RecentBooks extends Component {
   
     render() { 
         const books = this.state.books.slice(this.state.books.length-3, this.state.books.length).map(book=>{
-            return <Col key={book.id} sm={4}><Book shop_name={book.shop.name} description={book.description} 
+            return <Col key={book.id} lg={4} md={12} sm={12}><Book shop_name={book.shop.name} description={book.description} 
                                                    author={book.author}title={book.title} key={book.id} image={book.image} 
                                                    shop_address={book.shop.address} id={book.id}/></Col>
         })

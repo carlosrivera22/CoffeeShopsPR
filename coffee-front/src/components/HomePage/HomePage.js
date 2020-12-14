@@ -47,7 +47,7 @@ const HomePage = () => {
         <Container>
         <Row className="py-3">
             <Col>
-            <Image style={{width:"250px"}} src="../potential_logo2.gif" rounded />
+            <Image style={{width:"250px"}} src="../static/potential_logo2.gif" rounded />
             </Col>
         </Row>
         <Row className="py-3">
@@ -79,10 +79,10 @@ const HomePage = () => {
                 <h1>¿Como funciona?</h1>
                 <Row className="py-3">
                     <Col lg={6}>
-                    <Image style={{width:"400px"}} src="../brainwriting.png" rounded />
+                    <Image style={{width:"400px"}} src="../static/Brainwriting.png" rounded />
                     </Col>
                     <Col lg={6}>
-                    <Image style={{width:"400px"}} src="../brainwriting2.png" rounded />
+                    <Image style={{width:"400px"}} src="../static/Brainwriting2.png" rounded />
                     </Col>
                 </Row>
             </Col>
@@ -110,7 +110,7 @@ const HomePage = () => {
                     </Alert>
                 </React.Fragment>
             }
-            <Image style={{width:"50px"}} src="../newsletter_animation.gif" rounded />
+            <Image style={{width:"50px"}} src="../static/newsletter_animation.gif" rounded />
           
                 <InputGroup className="mb-3 py-3">
                     <FormControl
