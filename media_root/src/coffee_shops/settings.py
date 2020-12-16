@@ -25,7 +25,7 @@ SECRET_KEY = 'ja93s61imj&%sjy5ost88g4nw0@20)x$4$5d8(vno!9dfm06$e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://coffeeshopspr.herokuapp.com']
 
 
 # Application definition
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
    "http://localhost:3000"
 ]
