@@ -16,7 +16,7 @@ class MapPointers extends Component {
         this.getShops()
     }
     getShops = () =>{
-        axios.get('http://127.0.0.1:8000/api/coffee_shops/',{
+        axios.get('https://coffeeshopspr.herokuapp.com/api/coffee_shops/',{
             headers: {
                 'accept': 'application/json'
             },

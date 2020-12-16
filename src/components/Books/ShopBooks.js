@@ -13,7 +13,7 @@ class ShopBooks extends Component {
         this.getCoffeeShop()
     }
     getBooks = () =>{
-        axios.get('http://127.0.0.1:8000/api/coffee_shop/'+this.props.match.params.id+'/books',{
+        axios.get('https://coffeeshopspr.herokuapp.com/api/coffee_shop/'+this.props.match.params.id+'/books',{
             headers: {
                 'accept': 'application/json'
             }
@@ -28,7 +28,7 @@ class ShopBooks extends Component {
    }
 
    getCoffeeShop = () =>{
-    axios.get('http://127.0.0.1:8000/api/coffee_shops/'+this.props.match.params.id,{
+    axios.get('https://coffeeshopspr.herokuapp.com/api/coffee_shops/'+this.props.match.params.id,{
         headers: {
             'accept': 'application/json'
         }

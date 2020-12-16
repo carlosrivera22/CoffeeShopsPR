@@ -23,7 +23,7 @@ const HomePage = () => {
     function storeEmail(text){
         let formData = new FormData()
         formData.append('email',text)
-        axios.post("http://127.0.0.1:8000/api/newsletter/", formData,{
+        axios.post("https://coffeeshopspr.herokuapp.com/api/newsletter/", formData,{
             headers: {
                 'accept': 'application/json',
                 'content-type': 'multipart/form-data'

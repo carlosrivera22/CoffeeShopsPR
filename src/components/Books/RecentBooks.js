@@ -11,7 +11,7 @@ class RecentBooks extends Component {
         this.getBooks()
     }
     getBooks = () =>{
-        axios.get('http://127.0.0.1:8000/api/books/',{
+        axios.get('https://coffeeshopspr.herokuapp.com/api/books/',{
             headers: {
                 'accept': 'application/json'
             }

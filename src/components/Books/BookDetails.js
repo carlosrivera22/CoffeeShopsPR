@@ -12,7 +12,7 @@ class BookDetails extends Component{
         this.getBooks()
     }
     getBooks = () =>{
-        axios.get('http://127.0.0.1:8000/api/books/'+this.props.match.params.id,{
+        axios.get('https://coffeeshopspr.herokuapp.com/api/books/'+this.props.match.params.id,{
             headers: {
                 'accept': 'application/json'
             }
