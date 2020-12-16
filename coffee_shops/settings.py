@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
 
     'coffee_app',
     'rest_framework',
     'corsheaders',
+    'cloudinary',
 ]
 
 
@@ -134,6 +136,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hbvwo5kby',
+    'API_KEY': '367324167943464',
+    'API_SECRET': 'M7esocc61m-SrMJYp5igNyckPBk',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

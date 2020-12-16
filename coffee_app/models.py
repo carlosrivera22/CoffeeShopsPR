@@ -4,7 +4,7 @@ from django.db import models
 class CoffeeShop(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=360)
-    image = models.ImageField(null=True)
+    image = models.ImageField(null=True, blank=True)
     facebook = models.CharField(max_length=200,null=True)
     address = models.CharField(max_length=200,null=True)
     latitude = models.FloatField(null=True,blank=True)
