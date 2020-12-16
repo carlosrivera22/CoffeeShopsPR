@@ -20,6 +20,7 @@ from django.conf import settings
 from .views import index
 urlpatterns = [
     path('',index,name='index'),
+    path('list/',index,name='index')
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('coffee_app.api.urls',namespace='api-coffee-shops'))
