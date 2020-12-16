@@ -19,7 +19,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from .views import index
 urlpatterns = [
-    path(r'^/$',index,name='index'),
+    path(r'^$',index,name='index'),
+    path(r'^(?:.*)/?$',index),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('coffee_app.api.urls',namespace='api-coffee-shops'))
