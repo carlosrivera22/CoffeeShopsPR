@@ -47,11 +47,9 @@ INSTALLED_APPS = [
     
 ]
 
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = ['https://coffeeshopspr.herokuapp.com/']
-# CORS_ORIGIN_WHITELIST = [
-#    "http://localhost:3000"
-# ]
+CORS_ORIGIN_WHITELIST = [
+   "http://localhost:3000"
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
