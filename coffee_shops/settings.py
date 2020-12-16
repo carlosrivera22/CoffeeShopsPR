@@ -68,9 +68,7 @@ ROOT_URLCONF = 'coffee_shops.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'build'),
-                 os.path.join(BASE_DIR, 'staticfiles')
-        ],
+        'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,12 +149,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 django_heroku.settings(locals()) 
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build', 'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'build', 'static')
+STATICFILES_DIRS = []
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 MEDIA_URL = '/media/'
