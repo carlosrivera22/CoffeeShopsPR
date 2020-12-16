@@ -1,10 +1,10 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class CoffeeShop(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=360)
-    image = models.ImageField(null=True, blank=True)
+    image = CloudinaryField('image')
     facebook = models.CharField(max_length=200,null=True)
     address = models.CharField(max_length=200,null=True)
     latitude = models.FloatField(null=True,blank=True)
@@ -16,7 +16,7 @@ class CoffeeShop(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=360)
-    image = models.ImageField()
+    image = CloudinaryField('image')
     author = models.CharField(max_length=200)
     genre = models.CharField(max_length=200)
     shop = models.ForeignKey(CoffeeShop, on_delete=models.CASCADE)
