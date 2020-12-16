@@ -45,7 +45,7 @@ const HomePage = () => {
     }
     return(
         <Container>
-        <Row className="mt-3">
+        <Row className="py-5">
             <Col>
             <Image style={{width:"250px"}} src="../static/potential_logo2.gif" rounded />
             </Col>

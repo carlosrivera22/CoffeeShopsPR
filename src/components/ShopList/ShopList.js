@@ -85,7 +85,7 @@ const ShopList = (props) => {
   
   return (
     <Container style={{zIndex: 1}}>
-      <Row className='px-3 py-3'>
+      <Row className='px-3 py-5'>
         <h1>COFFEE SHOPS: <b>{region}</b></h1>
       </Row>
       <Row className="px-3">
