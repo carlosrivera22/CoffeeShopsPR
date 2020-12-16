@@ -4,7 +4,6 @@ export const loadBooks = () => {
   return async (dispatch) => {
     try {
       const books = await axios.get('https://coffeeshopspr.herokuapp.com/api/books/');
-      console.log(books)
       return dispatch(setBooks(books.data));
     } catch (error) {
       console.log('error:', error);
