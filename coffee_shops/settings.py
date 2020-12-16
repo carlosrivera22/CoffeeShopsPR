@@ -85,13 +85,22 @@ WSGI_APPLICATION = 'coffee_shops.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd4cqlg0cth744i',
+        'USER': 'dgwdevsxvvvpqk',
+        'PASSWORD': '987d64ab2916ca55d720b88de92d452be4223df4e0c329c3d776bee9133f2cc6',
+        'HOST': 'ec2-75-101-212-64.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
