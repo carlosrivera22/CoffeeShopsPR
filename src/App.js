@@ -5,13 +5,13 @@ import ShopList from './components/ShopList/ShopList';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage'
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import {Route,  HashRouter as Router, Switch} from 'react-router-dom'
 import BookDetails from './components/Books/BookDetails';
 import ShopBooks from './components/Books/ShopBooks';
 import BookList from './components/Books/BookList';
 function App() {
   return (
-    <BrowserRouter>
+    <Router basename="/static">
       <Navigation />
       <div className='App' id='main'>
         <Switch>
@@ -24,7 +24,7 @@ function App() {
         </Switch>
       </div>
       <Footer/>
-    </BrowserRouter>
+    </Router>
   );
 }
 
