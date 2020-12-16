@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
    "http://localhost:3000"
 ]
@@ -69,7 +68,7 @@ ROOT_URLCONF = 'coffee_shops.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'public')],
+        'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -147,6 +146,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+django_heroku.settings(locals()) 
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'build', 'static')
 STATICFILES_DIRS = []
@@ -156,4 +157,3 @@ MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
