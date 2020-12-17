@@ -94,7 +94,9 @@ const BookList = (props) => {
     return (
        
         <Container>
-            <h1 className="py-3"><b>LIBROS</b></h1>
+            <br></br>
+            <hr></hr>
+            <h1 className="py-5"><b>LIBROS</b></h1>
             <Row className="px-5 py-3">
                 <DropdownInputShops handleDropdown={handleDropdown}/>
                 <SearchInput  handleSearch={handleSearch}/>

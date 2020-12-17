@@ -50,7 +50,9 @@ class ShopBooks extends Component {
 
     return (
         <Container>
-            <h1 className="py-3"><b>{this.state.shop.name}</b></h1>
+            <br></br>
+            <br></br>
+            <h1 className="py-5"><b>{this.state.shop.name}</b></h1>
             <hr></hr>
             <Row className="py-3">
             {book_elements}

@@ -30,6 +30,8 @@ class BookDetails extends Component{
     render(){
     return (
         <Container>
+            <br></br>
+            <br></br>
             <center>
             <Row className="mb-5 mt-5">
                 <Col lg={6} md={12} sm={12}>

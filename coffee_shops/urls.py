@@ -25,8 +25,8 @@ urlpatterns = [
     path('books/<int:id>',index,name='book_details'),
     path('coffee_shop/<int:id>/books',index,name='shop_books'),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/', include('coffee_app.api.urls',namespace='api-coffee-shops'))
+    # path('api-auth/', include('rest_framework.urls')),
+    # path('api/', include('coffee_app.api.urls',namespace='api-coffee-shops'))
 ]
 
 
