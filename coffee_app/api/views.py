@@ -2,26 +2,26 @@ from rest_framework import viewsets
 from .serializers import CoffeeShopSerializer, NewsletterSerializer, BookSerializer
 from ..models import CoffeeShop, Newsletter,Book
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 
 class CoffeeShopViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = CoffeeShop.objects.all()
     serializer_class = CoffeeShopSerializer
 
 class NewsletterViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Newsletter.objects.all()
     serializer_class = NewsletterSerializer
 
 class BookViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     
 
 class CoffeeShopBooksViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticated]
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     def get_queryset(self):
