@@ -21,13 +21,13 @@ const DropdownInputShops = (props) => {
   return (
   
         
-    <div style={{width:"25%"}}>
+    <div style={{width:"50%"}}>
     <FormControl
         style={{borderRadius:"0px"}}
         as="select"
         id="inlineFormCustomSelect"
         custom
-        onClick={props.handleDropdown}
+        onChange={props.handleDropdown}
       >
         <option key={shops.length} value="">Todos</option>
         {shops.map((shop,index)=>
