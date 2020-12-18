@@ -2,25 +2,26 @@ from rest_framework import viewsets
 from .serializers import CoffeeShopSerializer, NewsletterSerializer, BookSerializer
 from ..models import CoffeeShop, Newsletter,Book
 from rest_framework.response import Response
-from django.contrib.auth.decorators import login_required
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-@login_required
 class CoffeeShopViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = CoffeeShop.objects.all()
     serializer_class = CoffeeShopSerializer
 
-@login_required
 class NewsletterViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Newsletter.objects.all()
     serializer_class = NewsletterSerializer
 
-@login_required
 class BookViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     
-@login_required
+
 class CoffeeShopBooksViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     def get_queryset(self):
