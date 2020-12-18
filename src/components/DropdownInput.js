@@ -13,7 +13,7 @@ const DropdownInput = ({ handleDropdown }) => {
         as="select"
         id="inlineFormCustomSelect"
         custom
-        onClick={handleDropdown}
+        onChange={handleDropdown}
       >
         <option value="isla">Isla</option>
         <option value="metro">Metro</option>
