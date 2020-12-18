@@ -1,4 +1,4 @@
-from .views import CoffeeShopViewSet, NewsletterViewSet, BookViewSet,CoffeeShopBooksViewSet
+# from .views import CoffeeShopViewSet, NewsletterViewSet, BookViewSet,CoffeeShopBooksViewSet
 from rest_framework import routers
 from django.urls import path, include
 
