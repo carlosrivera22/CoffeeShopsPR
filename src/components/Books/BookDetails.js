@@ -56,7 +56,7 @@ class BookDetails extends Component{
                         {this.state.shop.name}
                         <br></br>
                         <br></br>
-                        <span><b>Direccion</b></span>
+                        <span><b>Direcci&oacute;n</b></span>
                         <br></br>
                         <span>{this.state.shop.address}</span>
                      

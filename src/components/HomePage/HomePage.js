@@ -69,7 +69,7 @@ const HomePage = () => {
                 <center><p style={{width:"90%"}}className="py-3">
                     Brindamos informaci&oacute;n sobre los mejores Coffee Shops de Puerto Rico. 
                     Hemos colaborado con algunos Coffee Shops para proveerle a nuestros 
-                    clientes libros de manera gratuita siguiendo la dinamica <b>"Deja uno, llevate uno!"</b>. 
+                    clientes libros de manera gratuita siguiendo la din&aacute;mica <b>"¡Deja uno, ll&eacute;vate uno!"</b>. 
                 </p></center>
             </Col>
         </Row>
@@ -106,7 +106,7 @@ const HomePage = () => {
                 <React.Fragment>
                     
                     <Alert style={{transition: "width 2s"}} variant='dark' onClose={() => setSuccess(false)} dismissible>
-                        Gracias por subscribirte a nuestro newsletter!
+                    ¡Gracias por subscribirte a nuestro newsletter!
                     </Alert>
                 </React.Fragment>
             }
@@ -119,7 +119,7 @@ const HomePage = () => {
                     placeholder="Email"
                     />
                     <InputGroup.Append>
-                    <Button onClick={handleStoring} variant="outline-dark">Subscribete</Button>
+                    <Button onClick={handleStoring} variant="outline-dark">Subscr&iacute;bete</Button>
                     </InputGroup.Append>
                 </InputGroup>
          
