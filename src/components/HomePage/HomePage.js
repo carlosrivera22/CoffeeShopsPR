@@ -45,9 +45,11 @@ const HomePage = () => {
     }
     return(
         <Container>
+            <br></br>
+            <br></br>
         <Row className="py-5">
             <Col>
-            <Image style={{width:"250px"}} src="../static/potential_logo2.gif" rounded />
+            <Image style={{width:"250px"}} src="../static/logo_lacarretapr.png" rounded />
             </Col>
         </Row>
         <Row className="py-3">
@@ -68,7 +70,7 @@ const HomePage = () => {
                 <h1>Sobre Nosotros</h1>
                 <center><p style={{width:"90%"}}className="py-3">
                     Brindamos informaci&oacute;n sobre los mejores Coffee Shops de Puerto Rico. 
-                    Hemos colaborado con algunos Coffee Shops para proveerle a nuestros 
+                    Buscamos colaborar con Coffee Shops para proveerle a nuestros 
                     clientes libros de manera gratuita siguiendo la din&aacute;mica <b>"¡Deja uno, ll&eacute;vate uno!"</b>. 
                 </p></center>
             </Col>

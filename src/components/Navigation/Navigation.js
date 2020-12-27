@@ -3,8 +3,8 @@ import { Navbar, Nav} from 'react-bootstrap';
 
 const Navigation = () => {
     return ( 
-        <Navbar fixed="top" bg="dark" variant="dark" expand="sm">
-            <Navbar.Brand href="/">DE LA ISLA</Navbar.Brand>
+        <Navbar fixed="top" style={{backgroundColor:'#000'}} variant="dark" expand="sm">
+            <Navbar.Brand href="/">La Carreta</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
